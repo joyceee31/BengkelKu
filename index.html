@@ -1,58 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Change your WEBSITE TITLE HERE-->
-    <title>Edward's template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="main.css" />
-    <!-- <script src="index.js"></script> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motorcycle Maintenance</title>
+  <style>
+    /* Your existing CSS styles */
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body{
+      min-height: 100vh;
+      min-width: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url('./dict/images/Man_repair_motorcyle.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 800px;
+      padding: 20px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    }
+
+    h1, h2, h3 {
+      color: #333;
+    }
+
+    .intro {
+      margin-bottom: 20px;
+    }
+
+    .author {
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      overflow: hidden; /* Ensure children don't overflow */
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .card h3 {
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .card a {
+      display: inline-block;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .card a:hover {
+      background-color: #0056b3;
+    }
+
+    /* Language selection styles */
+    .language-selection {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 2;
+    }
+
+    .language-selection select {
+      padding: 8px;
+      font-size: 16px;
+    }
+  </style>
 </head>
-    <body>
-        <div class="text-intro">
-            <div class="intro">
-                <!-- Here's the Big title and the subtitle on the left on the main page -->
-                <h1>XXX's Island</h1>
-                <h2>Type your subtitle here</h2>
-            </div>
-            <div class="author">
-                <!-- Here's some basic information, you can add more <p></p> or delete any from below -->
-                <h3>Author: XXX</h3>
-                <p>I love python</p>
-                <p>I love econometrics</p>
-                <p>I love C++</p>
-            </div>
-        </div>
-        <div class="container">
+<body>
 
-            <!-- Here's the cards on the right. You can add more cards with copy-paste the whole <div class="card"></div> block -->
-            <div class="card">
-                <div class="content">
-                    <h2></h2>
-                    <!-- The title on the card.-->
-                    <h3>Data Science</h3>
-                    <div class="hov">
-                        <!-- The subtitle -->
-                        <p>Professional experiences and research experiences of data science</p>
-                        <!-- Link to the subpage-->
-                        <a href="./pages/ds_page/index.html">Read More</a>
-                    </div>
-                </div>
-            </div>
+  <!-- Language selection dropdown -->
+  <div class="language-selection">
+    <select id="languageSelect" onchange="changeLanguage()">
+      <option value="en">English</option>
+      <option value="id">Indonesian</option>
+    </select>
+  </div>
 
-            <div class="card">
-                <div class="content">
-                    <h2></h2>
-                    <h3>Game Design</h3>
-                    <div class="hov">
-                        <p>Professional experiences in game industry</p>
-                        <!-- Link to the subpage-->
-                        <a href="./pages/game_page/index.html">Read More</a>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="intro">
+      <h1>Welcome to Our Motorcycle Maintenance Website</h1>
+      <h2>Your One-Stop Destination for Reliable Motorcycle Care</h2>
+    </div>
+    <div class="author">
+      <h3>Founded by BengkelKu</h3>
+      <p>Established in 2023, Jakarta</p>
+    </div>
 
-        </div>
-    </body>
+    <div class="card">
+      <div class="content">
+        <h3>Services</h3>
+        <p>Explore our range of maintenance and repair services for motorcycles of all makes and models.</p>
+        <a href="#">Learn More</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="content">
+        <h3>Parts & Accessories</h3>
+        <p>Discover high-quality parts and accessories to enhance your motorcycle's performance and style.</p>
+        <a href="#">Shop Now</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Function to change the language based on the selection
+    function changeLanguage() {
+      var languageSelect = document.getElementById("languageSelect");
+      var selectedLanguage = languageSelect.value;
+      if (selectedLanguage === "en") {
+        window.location.href = "index.html"; // English homepage
+      } else if (selectedLanguage === "id") {
+        window.location.href = "index_id.html"; // Indonesian homepage
+      }
+    }
+  </script>
+
+</body>
 </html>
